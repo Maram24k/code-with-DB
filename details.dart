@@ -79,7 +79,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
       }
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('تم حفظ التعديلات بنجاح!')),
+        SnackBar(
+          content: Directionality(
+            textDirection: TextDirection.rtl,
+            child: Text(
+              'تم حفظ التعديلات بنجاح!',
+              textAlign: TextAlign.right,
+            ),
+          ),
+          backgroundColor: Colors.black,
+        ),
       );
 
       Navigator.pop(context);
